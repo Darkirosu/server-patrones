@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62662064-0be9-447e-9d68-bdbf0659bf8f" name="Default Changelist" comment="" />
+    <list default="true" id="62662064-0be9-447e-9d68-bdbf0659bf8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/Statistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/BodyElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/CloseElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/CsvVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/FileElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/JsonVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/ElementCSV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/VisitorFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/ElementCSV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/VisitorFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +33,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WFQZajU9sy7bR4x6qUNxBE5pS3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,11 +88,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578742918846</updated>
-      <workItem from="1578742923900" duration="34646000" />
+      <workItem from="1578742923900" duration="36986000" />
+      <workItem from="1578928421595" duration="14998000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
