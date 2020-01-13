@@ -1,0 +1,35 @@
+version: '3'
+
+networks:
+  navonionetwork:
+    driver: bridge
+
+
+services:
+  db:
+    container_name: db
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    networks:
+      - navonionetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: navoniodb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: toor
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - navonionetwork
+    ports:
+      - 8081:8080
+
+volumes:
+  db-data:
