@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62662064-0be9-447e-9d68-bdbf0659bf8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Prueba3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/decorator/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/decorator/NormalAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/JsonVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/JsonVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/JsonVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/JsonVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/BodyElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/BodyElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/BodyElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/BodyElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578742918846</updated>
       <workItem from="1578742923900" duration="36986000" />
-      <workItem from="1578928421595" duration="15634000" />
+      <workItem from="1578928421595" duration="20387000" />
     </task>
     <servers />
   </component>

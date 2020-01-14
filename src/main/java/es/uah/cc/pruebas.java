@@ -1,6 +1,8 @@
 package es.uah.cc;
 
 import es.uah.cc.domain.Statistics;
+import es.uah.cc.domain.composite.CombinedBet;
+import es.uah.cc.domain.composite.SimpleBet;
 import es.uah.cc.domain.state.Lucky;
 import es.uah.cc.domain.visitor.*;
 
@@ -9,6 +11,26 @@ import java.util.ArrayList;
 
 public class pruebas {
     public static void main(String args[]){
+
+        SimpleBet sb1 = new SimpleBet("Benzema hat-trick",3.1);
+        SimpleBet sb2 = new SimpleBet("3-1",2.4);
+        SimpleBet sb3 = new SimpleBet("Messi marca",1.16);
+        SimpleBet sb4 = new SimpleBet("Suarez Expulsado",2.75);
+
+        CombinedBet cb1 = new CombinedBet("RMA-VAL", 1.5);
+        CombinedBet cb2 = new CombinedBet("BAR-ATL",2.1);
+
+        CombinedBet pepe = new CombinedBet("Apuesta", 1);
+
+        cb1.addCombinedBet(sb1);
+        cb1.addCombinedBet(sb2);
+        cb2.addCombinedBet(sb3);
+        cb2.addCombinedBet(sb4);
+        pepe.addCombinedBet(cb1);
+        pepe.addCombinedBet(cb2);
+
+        System.out.println(pepe.getBonuss());
+
         Lucky l = new Lucky();
         System.out.println(l.toString());
         l.setBalance(500);

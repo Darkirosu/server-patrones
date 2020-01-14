@@ -1,6 +1,7 @@
 package es.uah.cc.domain.visitor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BodyElement implements Element {
 
@@ -11,8 +12,14 @@ public class BodyElement implements Element {
         return object;
     }
 
-    public void setObject(ArrayList<Object> object) {
-        this.object = object;
+    public void setObject(Object[] objects) {
+        for(Object ob:objects){
+            this.object.add(ob);
+        }
+    }
+
+    public void setObject(ArrayList<Object> objects) {
+       this.object=objects;
     }
 
     public BodyElement(Visitor visitor){
