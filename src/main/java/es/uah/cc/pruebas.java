@@ -30,7 +30,7 @@ public class pruebas {
         CloseElement ce = new CloseElement(null);
 
 
-        fe.setName("Prueba1");
+        fe.setName("Prueba3");
         Statistics s1= new Statistics(1,"Sandra",015);
         Statistics s2= new Statistics(2,"Pepe",45);
         Statistics s3= new Statistics(3,"Juan",17);
@@ -50,14 +50,14 @@ public class pruebas {
             ce.visit();
         }
 
-        try{
+        /*try{
             String classAttribute = s1.getClass().getFields()[1].getType().getName();
             System.out.println(classAttribute);
             /*String data = s1.getClass().getDeclaredField(classAttribute).getClass().toString();
-            System.out.println(data);*/
+            System.out.println(data);
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
 
 
 

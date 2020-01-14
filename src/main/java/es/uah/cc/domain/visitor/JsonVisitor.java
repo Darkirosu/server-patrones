@@ -29,7 +29,7 @@ public class JsonVisitor implements Visitor {
             String delimiter=";";
             String classAttribute;
 
-            bw.write("{");
+            bw.write("[");
             bw.newLine();
             for (int i = 0; i < objects.size() ; i++) {
                 bw.write("{");
@@ -38,12 +38,15 @@ public class JsonVisitor implements Visitor {
                     classAttribute = objects.get(i).getClass().getDeclaredFields()[j].getName();
                      aux="\""+classAttribute+"\":";
                     System.out.println(objects.get(i).getClass().getFields()[1].getType().getName());
-                     if(objects.get(i).getClass().getFields()[1].getType().getName().equals("java.lang.String")){
+                     if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")){
                          aux=aux+"\"";
                      }
-                     aux= aux=objects.get(i).getClass().getDeclaredField(classAttribute).get(objects.get(i))+",";
-                    if(objects.get(i).getClass().getFields()[1].getType().getName().equals("java.lang.String")){
+                     aux= aux+objects.get(i).getClass().getDeclaredField(classAttribute).get(objects.get(i));
+                    if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")){
                         aux=aux+"\"";
+                    }
+                    if(j+1<objects.get(i).getClass().getDeclaredFields().length){
+                        aux=aux+",";
                     }
                     //System.out.println(aux);
                     bw.write(aux);
@@ -57,7 +60,7 @@ public class JsonVisitor implements Visitor {
                 }
                 bw.newLine();
             }
-            bw.write("}");
+            bw.write("]");
             bw.newLine();
 
         }catch (Exception e){
