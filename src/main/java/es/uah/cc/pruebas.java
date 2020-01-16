@@ -3,6 +3,13 @@ package es.uah.cc;
 import es.uah.cc.domain.Statistics;
 import es.uah.cc.domain.composite.CombinedBet;
 import es.uah.cc.domain.composite.SimpleBet;
+import es.uah.cc.domain.decorator.*;
+import es.uah.cc.domain.games.SlotMachine;
+import es.uah.cc.domain.proxy.Proxy;
+import es.uah.cc.domain.proxy.ServerNormal;
+import es.uah.cc.domain.proxy.ServerPremium;
+import es.uah.cc.domain.proxy.ServiceInt;
+import es.uah.cc.domain.pruebaclases;
 import es.uah.cc.domain.state.Lucky;
 import es.uah.cc.domain.visitor.*;
 
@@ -10,6 +17,11 @@ import java.lang.reflect.*;
 import java.util.ArrayList;
 
 public class pruebas {
+
+    private static ServiceInt proxyi = new Proxy(new ServerNormal("Normal"));
+    private static ServiceInt proxys = new Proxy(new ServerPremium("Special"));
+
+
     public static void main(String args[]){
 
         SimpleBet sb1 = new SimpleBet("Benzema hat-trick",3.1);
@@ -41,10 +53,24 @@ public class pruebas {
         l.setWins(-5);
         System.out.println(l.lucky());
 
+        SlotMachine sm = new SlotMachine();
+        sm.setLucky(l.lucky());
+        int reward = sm.play();
 
-        Visitor visitorcsv = new CsvVisitor();
+        if(reward==-1){
+            System.out.println("Perdistes");
+        }else{
+            System.out.println(sm.getRewards(reward));
+            System.out.println(sm.getRewardsName(reward));
+        }
 
-        Visitor visitorjson = new JsonVisitor();
+
+
+
+
+        //Visitor visitorcsv = new CsvVisitor();
+
+        Visitor visitors = new CsvVisitor();
 
 
         FileElement fe = new FileElement(null);
@@ -53,24 +79,46 @@ public class pruebas {
 
 
         fe.setName("Prueba3");
-        Statistics s1= new Statistics(1,"Sandra",015);
-        Statistics s2= new Statistics(2,"Pepe",45);
-        Statistics s3= new Statistics(3,"Juan",17);
+        pruebaclases s1= new pruebaclases(1,"Sandra",015);
+        pruebaclases s2= new pruebaclases(2,"Pepe",45);
+        pruebaclases s3= new pruebaclases(3,"Juan",17);
         ArrayList<Object> al = new ArrayList<>();
         al.add(s1);
         al.add(s2);
         al.add(s3);
         be.setObject(al);
 
-        fe.setVisitor(visitorjson);
-        be.setVisitor(visitorjson);
-        ce.setVisitor(visitorjson);
+        fe.setVisitor(visitors);
+        be.setVisitor(visitors);
+        ce.setVisitor(visitors);
 
-        if(true){
+        if(false){
             fe.visit();
             be.visit();
             ce.visit();
         }
+
+        Client c1 = new Client(1,"pepe","uno","11","pepe@ho",0);
+        Client c2 = new Client(2,"Juan","Dr","22","ggg@ho",0);
+        Account a1 = new NormalAccount(c1);
+        Account a2 = new NormalAccount(c2);
+
+        Decorator pa = new PremiumAccount(a1,124);
+        System.out.println(pa.toString());
+        System.out.println("El dinero es "+pa.getMoney());
+        pa.addMoney(5);
+        System.out.println("El dinero es "+pa.getMoney());
+        Decorator sa = new SpecialAccount(a2,123);
+        System.out.println(sa.toString());
+        System.out.println("El dinero es "+sa.getMoney());
+        sa.addMoney(5);
+        System.out.println("El dinero es "+sa.getMoney());
+        sa.getClient();
+
+        System.out.println(proxys.service(sa));
+
+
+
 
         /*try{
             String classAttribute = s1.getClass().getFields()[1].getType().getName();

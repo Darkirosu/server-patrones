@@ -1,10 +1,12 @@
 package es.uah.cc.service;
 
+import es.uah.cc.domain.Statistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +18,10 @@ public class NavonioService {
     @Autowired
     public NavonioService(NavonioService navonioService){
         this.navonioService=navonioService;
+    }
+
+    public ArrayList<Statistics> getStatistics(int id){
+        return navonioService.getStatistics(id);
     }
 
     /*public Users getAccess(Users user){

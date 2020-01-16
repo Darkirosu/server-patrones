@@ -1,5 +1,6 @@
 package es.uah.cc.controler;
 
+import es.uah.cc.domain.Statistics;
 import es.uah.cc.service.NavonioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,9 @@ public class ControllerNavonio {
         this.navonioService=navonioService;
     }
 
+
+
+
    /* @RequestMapping(value="/users", method = RequestMethod.GET)
     public List<Users> getUsers(){
         return chairService.getUsers();
@@ -34,5 +38,11 @@ public class ControllerNavonio {
         return chairService.getStatus(id);
     }*/
 
-
+   /*
+    @RequestMapping(value = "/stadistics/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    Statistics getStatus(@PathVariable("id") int id) {
+        return NavonioService.getStatiscs(id);
+    }
+    */
 }

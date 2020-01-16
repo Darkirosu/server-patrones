@@ -2,13 +2,18 @@ package es.uah.cc.domain.decorator;
 
 public interface Account {
 
-    public int numberAccount();
+    public void addMoney(double m);
 
-    public int password();
+    public double getMoney();
 
-    public String user();
+    public Client getClient();
 
-    public double credit();
+    public String getKind();
 
-    public int id();
+    public void setKind(String kind);
+
+    @Override
+    public String toString();
+
+
 }

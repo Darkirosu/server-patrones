@@ -11,9 +11,7 @@ public class JsonVisitor implements Visitor {
 
     public void visitor(FileElement fileElement) {
         try{
-            System.out.println("El csv crea un archivo "+  fileElement.getName());
             String url = "./"+fileElement.getName()+".json";
-            System.out.println(url);
             File file =new File(url);
             FileWriter fw = new FileWriter(file);
             bw = new BufferedWriter(fw);
@@ -37,7 +35,6 @@ public class JsonVisitor implements Visitor {
                 for (int j = 0; j < objects.get(i).getClass().getDeclaredFields().length; j++) {
                     classAttribute = objects.get(i).getClass().getDeclaredFields()[j].getName();
                      aux="\""+classAttribute+"\":";
-                    System.out.println(objects.get(i).getClass().getFields()[1].getType().getName());
                      if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")){
                          aux=aux+"\"";
                      }
@@ -48,7 +45,6 @@ public class JsonVisitor implements Visitor {
                     if(j+1<objects.get(i).getClass().getDeclaredFields().length){
                         aux=aux+",";
                     }
-                    //System.out.println(aux);
                     bw.write(aux);
                     bw.newLine();
                     aux="";
