@@ -34,4 +34,6 @@ public class pruebaclases {
     public void setFecha(int fecha) {
         this.fecha = fecha;
     }
+
+
 }

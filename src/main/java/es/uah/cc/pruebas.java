@@ -1,20 +1,29 @@
 package es.uah.cc;
 
 import es.uah.cc.domain.Statistics;
+import es.uah.cc.domain.abstractfactory.PlayTexas;
+import es.uah.cc.domain.abstractfactory.Poker;
+import es.uah.cc.domain.abstractfactory.PokerTexas;
 import es.uah.cc.domain.composite.CombinedBet;
 import es.uah.cc.domain.composite.SimpleBet;
 import es.uah.cc.domain.decorator.*;
 import es.uah.cc.domain.games.SlotMachine;
+import es.uah.cc.domain.iterator.Agregator;
+import es.uah.cc.domain.iterator.AgregatorConcrete;
+import es.uah.cc.domain.iterator.Iterator;
 import es.uah.cc.domain.proxy.Proxy;
 import es.uah.cc.domain.proxy.ServerNormal;
 import es.uah.cc.domain.proxy.ServerPremium;
 import es.uah.cc.domain.proxy.ServiceInt;
 import es.uah.cc.domain.pruebaclases;
+import es.uah.cc.domain.singleton.Deck;
 import es.uah.cc.domain.state.Lucky;
 import es.uah.cc.domain.visitor.*;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class pruebas {
 
@@ -128,6 +137,40 @@ public class pruebas {
         }catch (Exception e){
             e.printStackTrace();
         }*/
+
+        Agregator agregator = new AgregatorConcrete(al);
+
+        Iterator iterator = agregator.createIterator();
+
+        System.out.println("hola "+ al.size());
+        System.out.println(iterator.finish());
+
+        try{
+            while (iterator.finish()){
+                pruebaclases p = (pruebaclases) iterator.elementCurrent();
+                System.out.println(" Iterator " + p.toString());
+                iterator.next();
+            }
+
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("Error "+e.toString());
+        }
+        ArrayList<Integer> manoprueba = new ArrayList<>();
+        manoprueba.add(0);
+        manoprueba.add(8);
+        manoprueba.add(9);
+        manoprueba.add(10);
+        manoprueba.add(11);
+
+        Deck deck = Deck.getInstance();
+        System.out.println( "La mano es " +deck.HandRanking(manoprueba));
+
+        Poker pokerfactory;
+        PlayTexas playTexas;
+        pokerfactory = new PokerTexas();
+        playTexas = pokerfactory.playTexas();
+
+        System.out.println(playTexas.winPlayer());
 
 
 
