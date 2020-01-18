@@ -5,6 +5,7 @@ import es.uah.cc.service.NavonioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,11 +39,23 @@ public class ControllerNavonio {
         return chairService.getStatus(id);
     }*/
 
-   /*
-    @RequestMapping(value = "/stadistics/{id}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/statistics/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Statistics getStatus(@PathVariable("id") int id) {
-        return NavonioService.getStatiscs(id);
+    ArrayList<Statistics> getStatistics(@PathVariable("id") int id) {
+        return navonioService.getStatistics(id);
     }
-    */
+
+
+    @RequestMapping(value = "/statisticsjson/id}", method = RequestMethod.GET)
+    public @ResponseBody
+    void filejson(@PathVariable("id") int id) {
+        navonioService.fileStatisticsJson(id);
+    }
+
+    @RequestMapping(value = "/statisticscsv/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    void fileCSV(@PathVariable("id") int id) {
+        navonioService.fileStatisticsCSV(id);
+    }
 }

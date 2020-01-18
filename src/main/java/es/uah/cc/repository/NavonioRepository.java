@@ -4,6 +4,7 @@ import es.uah.cc.domain.Statistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -16,9 +17,10 @@ public class NavonioRepository {
         this.navonioMapper=navonioMapper;
     }
 
-    public List<Statistics> getStadistics(int id){
+    public ArrayList<Statistics> getStadistics(int id){
         return navonioMapper.getStatistics(id);
     }
+
 
     /*public List<Users> getUsers(){
         return chairMapper.getUsers();

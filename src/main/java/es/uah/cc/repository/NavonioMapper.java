@@ -6,13 +6,14 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper
 public interface NavonioMapper {
 
     @Select("select id, name,bet, reward,date,age ,admin, username from user where id=#{id}")
-    List<Statistics> getStatistics(int id);
+    ArrayList<Statistics> getStatistics(int id);
 
     /*@Insert("INSERT INTO datatemperature(id_user, temperature, date) VALUES (#{id_user},#{temperature},NOW())")
     void setTemperature(DataTemperature dataTemperature);

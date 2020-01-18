@@ -1,9 +1,9 @@
 package es.uah.cc;
 
-import es.uah.cc.domain.Statistics;
-import es.uah.cc.domain.abstractfactory.PlayTexas;
-import es.uah.cc.domain.abstractfactory.Poker;
-import es.uah.cc.domain.abstractfactory.PokerTexas;
+import es.uah.cc.domain.builder.Croupier;
+import es.uah.cc.domain.builder.Distribute;
+import es.uah.cc.domain.builder.DistributeBuilder;
+import es.uah.cc.domain.builder.TexasDistributeBuilder;
 import es.uah.cc.domain.composite.CombinedBet;
 import es.uah.cc.domain.composite.SimpleBet;
 import es.uah.cc.domain.decorator.*;
@@ -20,10 +20,7 @@ import es.uah.cc.domain.singleton.Deck;
 import es.uah.cc.domain.state.Lucky;
 import es.uah.cc.domain.visitor.*;
 
-import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.stream.Collectors;
 
 public class pruebas {
 
@@ -165,17 +162,14 @@ public class pruebas {
         Deck deck = Deck.getInstance();
         System.out.println( "La mano es " +deck.HandRanking(manoprueba));
 
-        Poker pokerfactory;
-        PlayTexas playTexas;
-        pokerfactory = new PokerTexas();
-        playTexas = pokerfactory.playTexas();
+        Distribute distribute;
+        Croupier croupier = new Croupier();
+        DistributeBuilder texas = new TexasDistributeBuilder();
 
-        System.out.println(playTexas.winPlayer());
-
-
-
-
-
+        croupier.setDistributeBuilder(texas);
+        croupier.distributeTexas();
+        distribute = croupier.getDistribute();
+        System.out.println(croupier.getPlayer1());
 
 
 

@@ -2,24 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62662064-0be9-447e-9d68-bdbf0659bf8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/Play.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/PlayHoldem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/PlayTexas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/Poker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/PokerHoldem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/abstractfactory/PokerTexas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/iterator/Agregator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/iterator/AgregatorConcrete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/iterator/Iterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/iterator/IteratorTexas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/singleton/Deck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/builderok/Croupier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/builderok/Distribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/builderok/DistributeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/builderok/HoldemDistributeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/builderok/TexasDistributeBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/pruebaclases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/pruebaclases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/controler/ControllerNavonio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/controler/ControllerNavonio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/CsvVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/domain/visitor/CsvVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/pruebas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/Proxy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/ServerNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/ServerNormal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/ServerPremium.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/proxy/ServerPremium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/pruebas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/repository/NavonioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/repository/NavonioMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/repository/NavonioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/repository/NavonioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uah/cc/service/NavonioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uah/cc/service/NavonioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api-rest-navonio-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/api-rest-navonio-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api-rest-navonio-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/api-rest-navonio-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/navonio.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/controler/ControllerNavonio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/controler/ControllerNavonio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/abstractfactory/PlayHoldem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/abstractfactory/PlayHoldem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/abstractfactory/PlayTexas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/abstractfactory/PlayTexas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/CsvVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/domain/visitor/CsvVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/repository/NavonioMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/repository/NavonioMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/repository/NavonioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/repository/NavonioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uah/cc/service/NavonioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uah/cc/service/NavonioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="es.uah.cc.domain.builder" />
       <recent name="es.uah.cc.domain.proxy" />
       <recent name="es.uah.cc.domain" />
     </key>
@@ -101,7 +107,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578742918846</updated>
       <workItem from="1578742923900" duration="36986000" />
-      <workItem from="1578928421595" duration="75884000" />
+      <workItem from="1578928421595" duration="84672000" />
+      <workItem from="1579338976816" duration="4959000" />
     </task>
     <servers />
   </component>
