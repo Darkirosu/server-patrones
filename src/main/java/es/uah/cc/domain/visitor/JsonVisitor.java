@@ -22,6 +22,7 @@ public class JsonVisitor implements Visitor {
 
     public void visitor(BodyElement bodyElement) {
         try{
+            System.out.println("generando el body csv");
             ArrayList<Object> objects = bodyElement.getObject();
             String aux="";
             String delimiter=";";
@@ -35,11 +36,11 @@ public class JsonVisitor implements Visitor {
                 for (int j = 0; j < objects.get(i).getClass().getDeclaredFields().length; j++) {
                     classAttribute = objects.get(i).getClass().getDeclaredFields()[j].getName();
                      aux="\""+classAttribute+"\":";
-                     if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")){
+                     if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")||objects.get(i).getClass().getFields()[j].getType().getName().equals("java.util.Date")){
                          aux=aux+"\"";
                      }
                      aux= aux+objects.get(i).getClass().getDeclaredField(classAttribute).get(objects.get(i));
-                    if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")){
+                    if(objects.get(i).getClass().getFields()[j].getType().getName().equals("java.lang.String")||objects.get(i).getClass().getFields()[j].getType().getName().equals("java.util.Date")){
                         aux=aux+"\"";
                     }
                     if(j+1<objects.get(i).getClass().getDeclaredFields().length){

@@ -26,14 +26,17 @@ public class CsvVisitor implements Visitor {
     public void visitor(BodyElement bodyElement) {
         try{
             ArrayList<Object> objects = bodyElement.getObject();
+            System.out.println("generando el body csv");
             String aux="";
             String delimiter=";";
             String classAttribute;
-            for (int i = 0; i < objects.get(1).getClass().getDeclaredFields().length; i++) {
-                aux = aux + objects.get(1).getClass().getDeclaredFields()[i].getName();
-                if(i+1 < objects.get(i).getClass().getDeclaredFields().length){
+            System.out.println(objects.get(0).getClass().getDeclaredFields().length);
+            for (int i = 0; i < objects.get(0).getClass().getDeclaredFields().length; i++) {
+                aux = aux + objects.get(0).getClass().getDeclaredFields()[i].getName();
+                if(i+1 < objects.get(0).getClass().getDeclaredFields().length){
                     aux=aux+delimiter;
                 }
+                System.out.println(aux);
             }
             System.out.println(aux);
             bw.write(aux);

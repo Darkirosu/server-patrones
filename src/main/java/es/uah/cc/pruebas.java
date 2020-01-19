@@ -7,7 +7,7 @@ import es.uah.cc.domain.builder.TexasDistributeBuilder;
 import es.uah.cc.domain.composite.CombinedBet;
 import es.uah.cc.domain.composite.SimpleBet;
 import es.uah.cc.domain.decorator.*;
-import es.uah.cc.domain.games.SlotMachine;
+import es.uah.cc.domain.other.SlotMachine;
 import es.uah.cc.domain.iterator.Agregator;
 import es.uah.cc.domain.iterator.AgregatorConcrete;
 import es.uah.cc.domain.iterator.Iterator;
@@ -21,6 +21,7 @@ import es.uah.cc.domain.state.Lucky;
 import es.uah.cc.domain.visitor.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class pruebas {
 
@@ -48,31 +49,30 @@ public class pruebas {
         pepe.addCombinedBet(cb2);
 
         System.out.println(pepe.getBonuss());
+        if(false) {
+            Lucky l = new Lucky();
+            System.out.println(l.toString());
+            l.setBalance(500);
+            System.out.println(l.lucky());
+            System.out.println();
+            l.setGain(350);
+            System.out.println(l.lucky());
+            l.setWins(-5);
+            System.out.println(l.lucky());
 
-        Lucky l = new Lucky();
-        System.out.println(l.toString());
-        l.setBalance(500);
-        System.out.println(l.lucky());
-        System.out.println();
-        l.setGain(350);
-        System.out.println(l.lucky());
-        l.setWins(-5);
-        System.out.println(l.lucky());
+            SlotMachine sm = new SlotMachine();
+            sm.setLucky(l.lucky());
+            int reward = sm.play();
 
-        SlotMachine sm = new SlotMachine();
-        sm.setLucky(l.lucky());
-        int reward = sm.play();
+            if (reward == -1) {
+                System.out.println("Perdistes");
+            } else {
+                System.out.println(sm.getRewards(reward));
+                System.out.println(sm.getRewardsName(reward));
+            }
 
-        if(reward==-1){
-            System.out.println("Perdistes");
-        }else{
-            System.out.println(sm.getRewards(reward));
-            System.out.println(sm.getRewardsName(reward));
+
         }
-
-
-
-
 
         //Visitor visitorcsv = new CsvVisitor();
 
@@ -88,11 +88,16 @@ public class pruebas {
         pruebaclases s1= new pruebaclases(1,"Sandra",015);
         pruebaclases s2= new pruebaclases(2,"Pepe",45);
         pruebaclases s3= new pruebaclases(3,"Juan",17);
-        ArrayList<Object> al = new ArrayList<>();
+        ArrayList<pruebaclases> al = new ArrayList<>();
         al.add(s1);
         al.add(s2);
         al.add(s3);
-        be.setObject(al);
+        ArrayList<Object> obj = new ArrayList<>();
+        obj.addAll(al);
+        be.setObject(obj);
+
+        Date date = new Date();
+        System.out.println(date.getClass().toString());
 
         fe.setVisitor(visitors);
         be.setVisitor(visitors);
@@ -104,8 +109,8 @@ public class pruebas {
             ce.visit();
         }
 
-        Client c1 = new Client(1,"pepe","uno","11","pepe@ho",0);
-        Client c2 = new Client(2,"Juan","Dr","22","ggg@ho",0);
+        Client c1 = new Client(1,"pepe","uno","11",0);
+        Client c2 = new Client(2,"Juan","Dr","22",0);
         Account a1 = new NormalAccount(c1);
         Account a2 = new NormalAccount(c2);
 
@@ -121,7 +126,7 @@ public class pruebas {
         System.out.println("El dinero es "+sa.getMoney());
         sa.getClient();
 
-        System.out.println(proxys.service(sa));
+        System.out.println("proxy "+proxys.service(sa));
 
 
 

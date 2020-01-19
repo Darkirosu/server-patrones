@@ -12,21 +12,14 @@ public class Client {
     private String name;
     private String username;
     private String password;
-    private String email;
     private double money;
-    private ArrayList<Integer> gain;
 
-    public Client(int id, String name, String username, String password, String email, double money) {
+    public Client(int id, String name, String username, String password, double money) {
         this.id = id;
         this.name = name;
         this.username = username;
         this.password = password;
-        this.email = email;
         this.money = money;
-        this.gain= new ArrayList<>();
-        this.gain.add(0);
-        this.gain.add(0);
-        this.gain.add(0);
     }
 
 
@@ -63,14 +56,6 @@ public class Client {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public double getMoney() {
         return money;
     }
@@ -83,16 +68,4 @@ public class Client {
         this.money += money;
     }
 
-    public ArrayList<Integer> getGain() {
-        return gain;
-    }
-
-    public void setGain(ArrayList<Integer> gain) {
-        this.gain = gain;
-    }
-
-    public void addGain(int gain) {
-        this.gain.add(gain);
-        this.gain.remove(0);
-    }
 }

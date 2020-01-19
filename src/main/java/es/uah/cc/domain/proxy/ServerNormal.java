@@ -22,6 +22,7 @@ public class ServerNormal implements  ServiceInt {
 
     @Override
     public boolean service(Account account) {
+        System.out.println( kindPermitted.size()+"- service "+account.getKind() +" "+kindPermitted.contains(account.getKind()));
         if(kindPermitted.contains(account.getKind())){
             return true;
         }else{

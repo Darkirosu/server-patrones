@@ -1,12 +1,13 @@
 package es.uah.cc.controler;
 
-import es.uah.cc.domain.Statistics;
+import es.uah.cc.domain.data.GameSlot;
+import es.uah.cc.domain.data.Statistics;
+import es.uah.cc.domain.decorator.Client;
 import es.uah.cc.service.NavonioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 @RestController
@@ -20,6 +21,10 @@ public class ControllerNavonio {
         this.navonioService=navonioService;
     }
 
+    @RequestMapping(value = "/playslot", method = RequestMethod.POST)
+    public GameSlot getPlayslot(@RequestBody GameSlot gameSlot){
+        return navonioService.playslot(gameSlot);
+    }
 
 
 
@@ -46,8 +51,7 @@ public class ControllerNavonio {
         return navonioService.getStatistics(id);
     }
 
-
-    @RequestMapping(value = "/statisticsjson/id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/statisticsjson/{id}", method = RequestMethod.GET)
     public @ResponseBody
     void filejson(@PathVariable("id") int id) {
         navonioService.fileStatisticsJson(id);
@@ -58,4 +62,30 @@ public class ControllerNavonio {
     void fileCSV(@PathVariable("id") int id) {
         navonioService.fileStatisticsCSV(id);
     }
+
+    @RequestMapping(value = "/client/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    Client getClient(@PathVariable("id") int id) {
+        return navonioService.getClient(id);
+    }
+
+    @RequestMapping(value = "/enternormal/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    boolean getAccessN(@PathVariable("id") int id) {
+        return navonioService.enterNormal(id);
+    }
+
+    @RequestMapping(value = "/enterspecial/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    boolean getAccessS(@PathVariable("id") int id) {
+        return navonioService.enterSpecial(id);
+    }
+
+    @RequestMapping(value = "/client", method = RequestMethod.POST)
+    public @ResponseBody
+    void setClient(@RequestBody Client client) {
+        navonioService.setClient(client);
+    }
+
+
 }

@@ -20,10 +20,17 @@ public class ServerPremium implements  ServiceInt {
 
     @Override
     public boolean service(Account account) {
-        if(kindPermitted.contains(account.getKind())){
+        System.out.println( kindPermitted.size()+"- service "+account.getKind() +" "+kindPermitted.contains(account.getKind()));
+        for (int i = 0; i < kindPermitted.size(); i++) {
+            if(kindPermitted.get(i).equals(account.getKind())){
+                return true;
+            }
+        }
+        return false;
+        /*if(kindPermitted.contains(account.getKind())){
             return true;
         }else{
             return false;
-        }
+        }*/
     }
 }
